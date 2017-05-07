@@ -13,12 +13,15 @@ namespace CosineComparison
     {
         static void Main(string[] args)
         {
-            float[][] workingMatrix = MatrixGenerator.GetRandomVectors(75, 10000);
-            float[][] workingMatrix2 = MatrixGenerator.GetRandomVectors(75, 1000);
+            //float[][] workingMatrix = MatrixGenerator.GetRandomVectors(75, 10000);
+            //float[][] workingMatrix2 = MatrixGenerator.GetRandomVectors(75, 1000);
+
+            double[][] workingMatrix = MatrixGenerator.GetRandomVectorsDouble(75, 10000);
+            double[][] workingMatrix2 = MatrixGenerator.GetRandomVectorsDouble(75, 1000);
 
             ICosineDistanceCalculator calculator; 
             //calculator = new PlainCosineCalculator();
-            calculator = new PlainCosineCalculator();
+            calculator = new AForgeCosineCalculator();
 
             IMultiCosineDistanceCalculator multiCalculator;
             multiCalculator = new BaseParallelCosineCalculator(calculator);
@@ -26,7 +29,7 @@ namespace CosineComparison
             Stopwatch st = new Stopwatch();
             Console.WriteLine("Testing with matrices 1({0},{1}) 2({2},{3})", workingMatrix[0].Length, workingMatrix.Length, workingMatrix2[0].Length, workingMatrix2.Length);
             st.Start();
-            var result = multiCalculator.GetCosineDistance(workingMatrix, workingMatrix2);
+            var result = (multiCalculator).GetCosineDistance(workingMatrix, workingMatrix2);
             st.Stop();
 
             Console.WriteLine("Elapsed time is: {0}", st.Elapsed);

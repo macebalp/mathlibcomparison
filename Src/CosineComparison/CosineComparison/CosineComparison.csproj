@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Cotracts\ICosineDistanceCalculator.cs" />
     <Compile Include="Cotracts\IMultiCosineDistanceCalculator.cs" />
+    <Compile Include="Implementation\AForgeCosineCalculator.cs" />
     <Compile Include="Implementation\BaseMultiCosineCalculator.cs" />
     <Compile Include="Implementation\BaseParallelCosineCalculator.cs" />
     <Compile Include="Implementation\PlainCosineCalculator.cs" />

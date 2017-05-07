@@ -33,7 +33,22 @@ namespace CosineComparison.Implementation
             return result;
         }
 
+        public double[] GetCosineDistance(double[][] vectors1, double[][] vectors2)
+        {
+            int m1Length = vectors1.Length,
+                m2Length = vectors2.Length;
 
+            double[] result = new double[m1Length * m2Length];
+            Parallel.For(0, m1Length,
+                (i) =>
+                {
+                    double[] vector1 = vectors1[i];
+                    for (int j = 0; j < m2Length; j++)
+                        result[(i * m2Length) + j] = singleCalc.GetCosineDistance(vector1, vectors2[j]);
+                }
+            );
+            return result;
+        }
         
     }
 }

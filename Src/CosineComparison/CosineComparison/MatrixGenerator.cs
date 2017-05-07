@@ -20,5 +20,17 @@ namespace CosineComparison
             }
             return result;
         }
+
+        public static double[][] GetRandomVectorsDouble(int width, int height)
+        {
+            double[][] result = new double[height][];
+            for (int i = 0; i < height; i++)
+            {
+                result[i] = new double[width];
+                for (int j = 0; j < width; j++)
+                    result[i][j] = rnd.NextDouble();
+            }
+            return result;
+        }
     }
 }

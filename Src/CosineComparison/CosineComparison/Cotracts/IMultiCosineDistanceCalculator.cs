@@ -9,6 +9,7 @@ namespace CosineComparison.Cotracts
     public interface IMultiCosineDistanceCalculator
     {
         float[] GetCosineDistance(float[][] vectors1, float[][] vectors2);
+        double[] GetCosineDistance(double[][] vectors1, double[][] vectors2);
 
     }
 }

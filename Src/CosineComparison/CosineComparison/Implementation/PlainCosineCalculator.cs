@@ -25,6 +25,20 @@ namespace CosineComparison.Implementation
             return sum / (float)Math.Sqrt(norm1 * norm2);
         }
 
-        
+        public double GetCosineDistance(double[] vector1, double[] vector2)
+        {
+            double sum = 0, norm1 = 0, norm2 = 0, x1, x2;
+            int workingLength = vector1.Length;
+            for (int i = 0; i < workingLength; i++)
+            {
+                x1 = vector1[i];
+                x2 = vector2[i];
+
+                sum += x1 * x2;
+                norm1 += x1 * x1;
+                norm2 += x2 * x2;
+            }
+            return sum / Math.Sqrt(norm1 * norm2);
+        }
     }
 }

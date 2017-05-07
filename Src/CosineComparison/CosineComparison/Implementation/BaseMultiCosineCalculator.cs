@@ -27,5 +27,18 @@ namespace CosineComparison.Implementation
 
             return result;
         }
+
+        public double[] GetCosineDistance(double[][] vectors1, double[][] vectors2)
+        {
+            int m1Length = vectors1.Length,
+                m2Length = vectors2.Length;
+
+            double[] result = new double[m1Length * m2Length];
+            for (int i = 0; i < m1Length; i++)
+                for (int j = 0; j < m2Length; j++)
+                    result[(i * m2Length) + j] = singleCalc.GetCosineDistance(vectors1[i], vectors2[j]);
+
+            return result;
+        }
     }
 }
