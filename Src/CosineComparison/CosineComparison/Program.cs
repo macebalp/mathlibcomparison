@@ -31,8 +31,8 @@ namespace CosineComparison
 
             Console.WriteLine("Elapsed time is: {0}", st.Elapsed);
 
-            //multiCalculator = new BaseMultiCosineCalculator(calculator);
-            //var result2 = multiCalculator.GetCosineDistance(workingMatrix, workingMatrix2);
+            multiCalculator = new BaseMultiCosineCalculator(calculator);
+            var result2 = multiCalculator.GetCosineDistance(workingMatrix, workingMatrix2);
 
             
             Console.ReadLine();
