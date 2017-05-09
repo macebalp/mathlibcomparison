@@ -39,6 +39,9 @@
     <Reference Include="AForge.Math">
       <HintPath>..\packages\AForge.Math.2.2.5\lib\AForge.Math.dll</HintPath>
     </Reference>
+    <Reference Include="MathNet.Numerics">
+      <HintPath>..\packages\MathNet.Numerics.3.19.0\lib\net40\MathNet.Numerics.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -53,6 +56,7 @@
     <Compile Include="Implementation\AForgeCosineCalculator.cs" />
     <Compile Include="Implementation\BaseMultiCosineCalculator.cs" />
     <Compile Include="Implementation\BaseParallelCosineCalculator.cs" />
+    <Compile Include="Implementation\MathNetCosineCalculator.cs" />
     <Compile Include="Implementation\PlainCosineCalculator.cs" />
     <Compile Include="MatrixGenerator.cs" />
     <Compile Include="Program.cs" />

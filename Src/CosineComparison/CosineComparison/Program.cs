@@ -13,16 +13,17 @@ namespace CosineComparison
     {
         static void Main(string[] args)
         {
-            //float[][] workingMatrix = MatrixGenerator.GetRandomVectors(75, 10000);
-            //float[][] workingMatrix2 = MatrixGenerator.GetRandomVectors(75, 1000);
+            float[][] workingMatrix = MatrixGenerator.GetRandomVectors(75, 10000);
+            float[][] workingMatrix2 = MatrixGenerator.GetRandomVectors(75, 1000);
 
-            double[][] workingMatrix = MatrixGenerator.GetRandomVectorsDouble(75, 10000);
-            double[][] workingMatrix2 = MatrixGenerator.GetRandomVectorsDouble(75, 1000);
+            //double[][] workingMatrix = MatrixGenerator.GetRandomVectorsDouble(75, 10000);
+            //double[][] workingMatrix2 = MatrixGenerator.GetRandomVectorsDouble(75, 1000);
 
             ICosineDistanceCalculator calculator; 
-            //calculator = new PlainCosineCalculator();
-            calculator = new AForgeCosineCalculator();
-
+            calculator = new PlainCosineCalculator();
+            //calculator = new AForgeCosineCalculator();
+            //calculator = new MathNetCosineCalculator();
+            
             IMultiCosineDistanceCalculator multiCalculator;
             multiCalculator = new BaseParallelCosineCalculator(calculator);
             
